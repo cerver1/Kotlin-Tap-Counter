@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Counter1234</string>
+    <string name="app_name"> </string>
     <string name="up">Increase</string>
     <string name="down">Decrease</string>
+    <string name="setting">Settings</string>
+    <string name="version">Version Info</string>
+
 </resources>

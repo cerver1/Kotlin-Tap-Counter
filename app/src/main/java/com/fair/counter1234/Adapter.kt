@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 
 class Adapter(fm: FragmentManager): FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    override fun getCount() = 3
+    override fun getCount() = 2
 
     override fun getItem(position: Int) =
         when (position) {

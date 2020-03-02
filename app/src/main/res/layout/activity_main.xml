@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    tools:ignore="Overdraw">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/AppBarLayout"
@@ -36,9 +37,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/ToolBar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-
-                />
+                android:layout_height="?attr/actionBarSize" />
 
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>

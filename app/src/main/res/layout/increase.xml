@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:text="@string/up"
         android:textSize="100sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:text="@string/up"/>
+        android:textColor="@android:color/white" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabResetIncreasing"

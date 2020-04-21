@@ -1,7 +1,10 @@
 <resources>
+
     <string name="app_name"> </string>
     <string name="up">0</string>
     <string name="setting">Settings</string>
     <string name="version">Version Info</string>
+    <string name="Init_Decrease">100</string>
+
 
 </resources>

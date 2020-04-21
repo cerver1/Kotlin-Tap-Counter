@@ -5,22 +5,32 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
+import com.fair.counter1234.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(ToolBar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val fragmentAdapter = Adapter(supportFragmentManager)
-        ViewPager.adapter = fragmentAdapter
+        with(binding){
 
-        TabLayout.setupWithViewPager(ViewPager)
+            setSupportActionBar(ToolBar)
 
-        TabLayout.getTabAt(0)?.setIcon(R.drawable.up)
-        TabLayout.getTabAt(1)?.setIcon(R.drawable.down)
+            val fragmentAdapter = Adapter(supportFragmentManager)
+            ViewPager.adapter = fragmentAdapter
+
+            TabLayout.setupWithViewPager(ViewPager)
+
+            TabLayout.getTabAt(0)?.setIcon(R.drawable.up)
+            TabLayout.getTabAt(1)?.setIcon(R.drawable.down)
+
+
+        }
+
 
     }
 

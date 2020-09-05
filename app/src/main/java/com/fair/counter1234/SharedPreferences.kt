@@ -2,19 +2,33 @@ package com.fair.counter1234
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.preference.PreferenceManager
 
-class SharedPreferences(context: Context) {
+class SharedPreferences(context: Context?) {
 
-        private val PRIVATE_MODE = 0
-        private val PREF_NAME = "initVal"
-        private val sharedPrefs: SharedPreferences = context.getSharedPreferences(PREF_NAME,PRIVATE_MODE)
+    private val defaultPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+    private val editor = defaultPreferences.edit()
 
-        fun save(Key:String,data:String){
-            val editor: SharedPreferences.Editor = sharedPrefs.edit()
-            editor.putString(Key,data)
-            editor.apply()
-        }
-        fun retrieve(Key: String):String?{
-            return sharedPrefs.getString(Key, null)
-        }
+    /**
+    fun isFirstRun() = defaultPreferences.getBoolean("FIRST_TIME", true)
+    fun setFirstRun() {
+        editor.putBoolean("FIRST_TIME", false)
+        editor.apply()
+    }
+    */
+
+    fun getIncrementalCount() = defaultPreferences.getInt("IncrementalCount", 0)
+    fun setIncrementalCount(value: Int) {
+        editor.putInt("IncrementalCount", value)
+        editor.apply()
+    }
+
+    fun getDecrementalCount() = defaultPreferences.getInt("DecrementalCount", 100)
+    fun setDecrementalCount(value: Int) {
+        editor.putInt("DecrementalCount", value)
+        editor.apply()
+    }
+
+    val get = { KEY_NAME: String -> defaultPreferences.getString(KEY_NAME, "")}
+
 }

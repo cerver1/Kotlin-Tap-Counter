@@ -1,23 +1,25 @@
 package com.fair.counter1234
+
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.NumberPicker
 import android.widget.TextView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.fair.counter1234.databinding.DecreaseBinding
 
-class Decrease: Fragment(R.layout.decrease){
+class Decrease : Fragment(R.layout.decrease) {
 
     private var _decreaseBinding: DecreaseBinding? = null
     private val viewBinding get() = _decreaseBinding!!
 
     private lateinit var preferences: SharedPreferences
 
-    private val model : GlobalViewModel by activityViewModels()
+    private val model: GlobalViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,6 +43,8 @@ class Decrease: Fragment(R.layout.decrease){
 
             fabResetDecreasing.setOnClickListener {
 
+                Toast.makeText(requireContext(), "Clear button clicked", Toast.LENGTH_SHORT)
+                    .show()
 //                if (txtDecreasing.text.toString().toInt() < shared.retrieve("initValue")!!.toInt()){
 //                    fabResetDecreasing.setImageResource(R.drawable.settings)
 //                    txtDecreasing.text = shared.retrieve("initValue")
@@ -50,7 +54,7 @@ class Decrease: Fragment(R.layout.decrease){
             }
         }
 
- }
+    }
 
     override fun onStop() {
         super.onStop()
@@ -95,4 +99,4 @@ class Decrease: Fragment(R.layout.decrease){
 //
 //        alert.show()
 //        }
-    }
+}

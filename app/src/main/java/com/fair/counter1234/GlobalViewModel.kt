@@ -6,16 +6,16 @@ import android.support.v4.app.INotificationSideChannel
 import android.view.View
 import androidx.lifecycle.*
 
-class GlobalViewModel: ViewModel() {
+class GlobalViewModel : ViewModel() {
 
     var _incremental = MutableLiveData<Int>()
-    val incremental : LiveData<Int>
+    val incremental: LiveData<Int>
         get() = _incremental
 
 
     var _decremental = MutableLiveData<Int>()
-    val decremental : LiveData<Int>
-            get() = _decremental
+    val decremental: LiveData<Int>
+        get() = _decremental
 
     fun incrementOnClick() {
         _incremental.value = _incremental.value?.plus(1)

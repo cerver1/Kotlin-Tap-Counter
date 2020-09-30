@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        with(binding){
+        with(binding) {
 
             setSupportActionBar(ToolBar)
 
@@ -42,10 +42,12 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
-        if (id == R.id.setting)
-        {Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();return true}
-        if (id == R.id.version)
-        {Toast.makeText(this,"Version",Toast.LENGTH_SHORT).show();return true}
+        if (id == R.id.setting) {
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();return true
+        }
+        if (id == R.id.version) {
+            Toast.makeText(this, "Version", Toast.LENGTH_SHORT).show();return true
+        }
 
         return super.onOptionsItemSelected(item)
     }

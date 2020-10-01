@@ -7,13 +7,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.fair.counter1234.databinding.IncreaseBinding
 
-class Increase: Fragment(R.layout.increase) {
+class Increase : Fragment(R.layout.increase) {
 
     private var _increaseBinding: IncreaseBinding? = null
     private val viewBinding get() = _increaseBinding!!
 
     private lateinit var preferences: SharedPreferences
-    private val model : GlobalViewModel by activityViewModels()
+    private val model: GlobalViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
